@@ -53,7 +53,7 @@ class SQLAlchemyRepository(AbstractRepository):
     
 
     async def update(self, id: int, data: dict):
-        stmt = update(self.model).values(**data).filter_by(id=id)
+        stmt = update(self.model).values(**data).filter_by(id=id).returning(self.model)
         res = await self.session.execute(stmt)
         return res.scalar_one().to_read_model()
     
