@@ -7,7 +7,7 @@ migrations/
 .env
 # C extensions
 *.so
-
+image/
 # Distribution / packaging
 .Python
 build/

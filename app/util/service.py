@@ -40,10 +40,10 @@ class BaseService(AbstractService):
             return created_obj
 
 
-    async def read_all(self, uow: IUnitOfWork):
+    async def read_all(self, uow: IUnitOfWork, **filter_by):
         async with uow:
             repo = getattr(uow, self.repository)
-            read_obj = await repo.read_all()
+            read_obj = await repo.read_all(**filter_by)
             return read_obj
     
     async def read_one(self, uow: IUnitOfWork, **filter_by):

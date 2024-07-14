@@ -12,5 +12,7 @@ DB_HOST = os.getenv('DB_HOST')
 DB_NAME = os.getenv('DB_NAME')
 REDIS_URL = os.getenv('REDIS_URL')
 
+IMAGE_DIRECTOR_URL = './image'
+
 
 db_full_url = f'postgresql+asyncpg://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}'

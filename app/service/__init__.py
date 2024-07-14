@@ -1,2 +1,2 @@
 from .category import CategoryService
-from .product import ProductService
+from .product import *
