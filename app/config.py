@@ -14,5 +14,8 @@ REDIS_URL = os.getenv('REDIS_URL')
 
 IMAGE_DIRECTOR_URL = './image'
 
+SMTP_USER = os.getenv('SMTP_USER')
+SMTP_PASSWORD = os.getenv('SMTP_PASSWORD')
+
 
 db_full_url = f'postgresql+asyncpg://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}'

@@ -14,6 +14,7 @@ class User(Base):
     password: Mapped[str]
     profile_picture: Mapped[str]
     role: Mapped[str]
+    verify: Mapped[bool] = mapped_column(default=False)
 
 
     def to_read_model(self):

@@ -2,9 +2,9 @@ from redis import asyncio as aioredis
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 import os
-
+from app.config import REDIS_URL
 async def cache_init():
-    redis = aioredis.from_url('redis://', decode_responses=True)
+    redis = aioredis.from_url(f'redis://{REDIS_URL}', decode_responses=True)
     FastAPICache.init(RedisBackend(redis), prefix='fastapi_cache')
 
 
